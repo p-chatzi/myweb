@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,13 +11,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
     <!-- SPA Navigation -->
     <nav>
         <a href="#" class="nav-brand">Peter Chatzigianis</a>
         <div class="nav-links">
-            <button id="theme-toggle" class="btn-icon" aria-label="Toggle Theme" style="background: none; border: none; cursor: pointer; font-size: 1.2rem; color: var(--text-secondary); margin-right: 1rem; transition: color 0.3s ease;">
+            <button id="theme-toggle" class="btn-icon" aria-label="Toggle Theme"
+                style="background: none; border: none; cursor: pointer; font-size: 1.2rem; color: var(--text-secondary); margin-right: 1rem; transition: color 0.3s ease;">
                 <i class="fa-solid fa-moon"></i>
             </button>
             <a href="#" data-target="home">Gateway</a>
@@ -26,25 +29,29 @@
             <a href="#" data-target="contact">Contact</a>
         </div>
         <div class="mobile-nav-controls" style="display: none; align-items: center; gap: 1.5rem;">
-            <button id="mobile-nav-toggle" class="btn-icon" style="font-size: 2.5rem; color: var(--text-primary); background: none; border: none; cursor: pointer;">
+            <button id="mobile-nav-toggle" class="btn-icon"
+                style="font-size: 2.5rem; color: var(--text-primary); background: none; border: none; cursor: pointer;">
                 <i class="fa-solid fa-bars"></i>
             </button>
-            <button class="mobile-nav-brand-pc" onclick="navigateTo('home')" style="font-family: 'Space Grotesk', sans-serif; font-size: 1.8rem; font-weight: 700; color: var(--text-primary); cursor: pointer; border: 2px solid var(--text-primary); border-radius: 8px; padding: 0.2rem 0.8rem; display: inline-block; background: transparent; transition: opacity 0.3s ease;">P.C.</button>
+            <button class="mobile-nav-brand-pc" onclick="navigateTo('home')"
+                style="font-family: 'Space Grotesk', sans-serif; font-size: 1.8rem; font-weight: 700; color: var(--text-primary); cursor: pointer; border: 2px solid var(--text-primary); border-radius: 8px; padding: 0.2rem 0.8rem; display: inline-block; background: transparent; transition: opacity 0.3s ease;">P.C.</button>
         </div>
     </nav>
 
     <!-- PAGE 1: Landing Gateway (The Hero Page) -->
     <section id="home" class="view active">
-        <div class="container" style="display: flex; flex-direction: column; justify-content: center; min-height: 75vh;">
+        <div class="container"
+            style="display: flex; flex-direction: column; justify-content: center; min-height: 75vh;">
             <div style="max-width: 900px;">
                 <h1 style="margin-bottom: 2rem;">
                     <span class="gradient-text-blue">Gardien Numérique</span><br>
                     des Infrastructures et réseaux IT
                 </h1>
                 <p style="font-size: 1.4rem; max-width: 800px; margin-bottom: 3rem; line-height: 1.8;">
-                    Étudiant en Bachelor Cybersécurité à l'ISEN Méditerranée, dédié à la protection d'infrastructures, au durcissement système et à la résilience des infrastructures critiques.
+                    Étudiant en Bachelor Cybersécurité à l'ISEN Méditerranée, dédié à la protection d'infrastructures,
+                    au durcissement système et à la résilience des infrastructures critiques.
                 </p>
-                
+
                 <div class="btn-group">
                     <button class="btn btn-primary" data-route="projects">
                         Découvrir mes Projets
@@ -55,11 +62,16 @@
                 </div>
 
                 <div class="stats-grid" style="display: flex; gap: 1rem; margin-top: 2rem;">
-                    <a href="https://wrought-severity-rectangle.ngrok-free.dev" target="_blank" rel="noopener noreferrer" class="btn btn-primary-green" style="padding: 0.8rem 1.5rem; font-size: 0.95rem;">
+                    <a href="https://wrought-severity-rectangle.ngrok-free.dev" target="_blank"
+                        rel="noopener noreferrer" class="btn btn-primary-green"
+                        style="padding: 0.8rem 1.5rem; font-size: 0.95rem;">
                         <i class="fa-solid fa-server" style="margin-right: 0.5rem;"></i> Mon CTF
                     </a>
-                    <a href="https://www.root-me.org/4tune?lang=fr#c8295e09c8fffd0eb6063150be326851" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="padding: 0.8rem 1.5rem; font-size: 0.95rem;">
-                        <i class="fa-solid fa-shield-halved" style="margin-right: 0.5rem; color: var(--accent-blue);"></i> Root-Me: 255 pts
+                    <a href="https://www.root-me.org/4tune?lang=fr#c8295e09c8fffd0eb6063150be326851" target="_blank"
+                        rel="noopener noreferrer" class="btn btn-secondary"
+                        style="padding: 0.8rem 1.5rem; font-size: 0.95rem;">
+                        <i class="fa-solid fa-shield-halved"
+                            style="margin-right: 0.5rem; color: var(--accent-blue);"></i> Root-Me: 255 pts
                     </a>
                 </div>
             </div>
@@ -71,19 +83,23 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="gradient-text-green">Compétences Technique</h2>
-                <p style="max-width: 700px; font-size: 1.2rem;">Compétences en ingénierie système, sécurité des réseaux, conformité et développement sécurisé.</p>
+                <p style="max-width: 700px; font-size: 1.2rem;">Compétences en ingénierie système, sécurité des réseaux,
+                    conformité et développement sécurisé.</p>
             </div>
-            
+
             <div class="grid">
                 <!-- Group 1 -->
-                <div class="card" style="cursor: pointer;" onclick="handleCardClick(event, 'tech-0', 'expertise/reseau-et-secu-app.html')">
+                <div class="card" style="cursor: pointer;"
+                    onclick="handleCardClick(event, 'tech-0', 'expertise/reseau-et-secu-app.html')">
                     <div class="card-image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=3840&q=80" alt="Server racks network">
+                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=3840&q=80"
+                            alt="Server racks network">
                         <div class="card-image-overlay"></div>
                     </div>
                     <div class="card-content-wrapper">
                         <h3><i class="fa-solid fa-network-wired"></i> Réseau & Sécurité Applicative</h3>
-                        <p>Architecture, micro-segmentation et protection avancée des flux réseaux et des applications.</p>
+                        <p>Architecture, micro-segmentation et protection avancée des flux réseaux et des applications.
+                        </p>
                         <div style="margin-top: auto;">
                             <span class="tech-tag">Cisco Secure Firewall</span>
                             <span class="tech-tag">FortiGate</span>
@@ -92,18 +108,21 @@
                             <span class="tech-tag">WireGuard</span>
                             <span class="tech-tag">ACLs</span>
                         </div>
-                        </div>
+                    </div>
                 </div>
 
                 <!-- Group 2 -->
-                <div class="card" style="cursor: pointer;" onclick="handleCardClick(event, 'tech-1', 'expertise/iam.html')">
+                <div class="card" style="cursor: pointer;"
+                    onclick="handleCardClick(event, 'tech-1', 'expertise/iam.html')">
                     <div class="card-image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=3840&q=80" alt="Identity security concepts">
+                        <img src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=3840&q=80"
+                            alt="Identity security concepts">
                         <div class="card-image-overlay"></div>
                     </div>
                     <div class="card-content-wrapper">
                         <h3><i class="fa-solid fa-id-card-clip"></i> Identity & Access Management</h3>
-                        <p>Centralisation, audit et sécurisation stricte des accès utilisateurs et machines (IdP / IAM).</p>
+                        <p>Centralisation, audit et sécurisation stricte des accès utilisateurs et machines (IdP / IAM).
+                        </p>
                         <div style="margin-top: auto;">
                             <span class="tech-tag">Microsoft AD</span>
                             <span class="tech-tag">Azure Entra ID</span>
@@ -112,18 +131,21 @@
                             <span class="tech-tag">FreeRADIUS</span>
                             <span class="tech-tag">Samba4</span>
                         </div>
-                        </div>
+                    </div>
                 </div>
 
                 <!-- Group 3 -->
-                <div class="card" style="cursor: pointer;" onclick="handleCardClick(event, 'tech-2', 'expertise/sys-et-virt.html')">
+                <div class="card" style="cursor: pointer;"
+                    onclick="handleCardClick(event, 'tech-2', 'expertise/sys-et-virt.html')">
                     <div class="card-image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1629654297299-c8506221ca97?ixlib=rb-4.0.3&auto=format&fit=crop&w=3840&q=80" alt="Linux systems terminal">
+                        <img src="https://images.unsplash.com/photo-1629654297299-c8506221ca97?ixlib=rb-4.0.3&auto=format&fit=crop&w=3840&q=80"
+                            alt="Linux systems terminal">
                         <div class="card-image-overlay"></div>
                     </div>
                     <div class="card-content-wrapper">
                         <h3><i class="fa-brands fa-linux"></i> Systèmes & Virtualisation</h3>
-                        <p>Administration avancée, déploiement automatisé et gestion d'infrastructures virtualisées complexes.</p>
+                        <p>Administration avancée, déploiement automatisé et gestion d'infrastructures virtualisées
+                            complexes.</p>
                         <div style="margin-top: auto;">
                             <span class="tech-tag">Linux</span>
                             <span class="tech-tag">Windows Server</span>
@@ -133,18 +155,21 @@
                             <span class="tech-tag">Proxmox</span>
                             <span class="tech-tag">ESXI</span>
                         </div>
-                        </div>
+                    </div>
                 </div>
 
                 <!-- Group 4 -->
-                <div class="card" style="cursor: pointer;" onclick="handleCardClick(event, 'tech-3', 'expertise/secu.html')">
+                <div class="card" style="cursor: pointer;"
+                    onclick="handleCardClick(event, 'tech-3', 'expertise/secu.html')">
                     <div class="card-image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1551808525-51a94da548ce?ixlib=rb-4.0.3&auto=format&fit=crop&w=3840&q=80" alt="Data analysis and telemetry">
+                        <img src="https://images.unsplash.com/photo-1551808525-51a94da548ce?ixlib=rb-4.0.3&auto=format&fit=crop&w=3840&q=80"
+                            alt="Data analysis and telemetry">
                         <div class="card-image-overlay"></div>
                     </div>
                     <div class="card-content-wrapper">
                         <h3><i class="fa-solid fa-radar"></i> Cybersécurité (Detection & Response)</h3>
-                        <p>Surveillance, corrélation de logs massive et réponse rapide aux incidents dans des environnements critiques.</p>
+                        <p>Surveillance, corrélation de logs massive et réponse rapide aux incidents dans des
+                            environnements critiques.</p>
                         <div style="margin-top: auto;">
                             <span class="tech-tag">Elastic ELK</span>
                             <span class="tech-tag">Splunk</span>
@@ -153,35 +178,41 @@
                             <span class="tech-tag">Cisco Snort</span>
                             <span class="tech-tag">MITRE ATT&CK</span>
                         </div>
-                        </div>
+                    </div>
                 </div>
 
                 <!-- Group 5: New Hardening Category -->
-                <div class="card" style="cursor: pointer;" onclick="handleCardClick(event, 'tech-4', 'expertise/hardening.html')">
+                <div class="card" style="cursor: pointer;"
+                    onclick="handleCardClick(event, 'tech-4', 'expertise/hardening.html')">
                     <div class="card-image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-4.0.3&auto=format&fit=crop&w=3840&q=80" alt="Security hardening locks">
+                        <img src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-4.0.3&auto=format&fit=crop&w=3840&q=80"
+                            alt="Security hardening locks">
                         <div class="card-image-overlay"></div>
                     </div>
                     <div class="card-content-wrapper">
                         <h3><i class="fa-solid fa-lock"></i> Durcissement & Conformité (Hardening)</h3>
-                        <p>Audit de configuration AD, scans de conformité automatisés, et application stricte des guides de durcissement étatiques.</p>
+                        <p>Audit de configuration AD, scans de conformité automatisés, et application stricte des guides
+                            de durcissement étatiques.</p>
                         <div style="margin-top: auto;">
                             <span class="tech-tag">PingCastle</span>
                             <span class="tech-tag">OpenSCAP</span>
                             <span class="tech-tag">Guides de l'ANSSI</span>
                         </div>
-                        </div>
+                    </div>
                 </div>
 
                 <!-- Group 6 -->
-                <div class="card" style="cursor: pointer;" onclick="handleCardClick(event, 'tech-5', 'expertise/prog.html')">
+                <div class="card" style="cursor: pointer;"
+                    onclick="handleCardClick(event, 'tech-5', 'expertise/prog.html')">
                     <div class="card-image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=3840&q=80" alt="Code abstraction">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=3840&q=80"
+                            alt="Code abstraction">
                         <div class="card-image-overlay"></div>
                     </div>
                     <div class="card-content-wrapper">
                         <h3><i class="fa-solid fa-code"></i> Programmation & Scripting</h3>
-                        <p>Focus sur l'automatisation, les outils de sécurité, l'administration système et les structures de données.</p>
+                        <p>Focus sur l'automatisation, les outils de sécurité, l'administration système et les
+                            structures de données.</p>
                         <div style="margin-top: auto;">
                             <span class="tech-tag">C</span>
                             <span class="tech-tag">Python</span>
@@ -189,7 +220,7 @@
                             <span class="tech-tag">PowerShell</span>
                             <span class="tech-tag">JavaScript</span>
                         </div>
-                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -200,21 +231,29 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="gradient-text-blue">Projets Techniques</h2>
-                <p style="max-width: 700px; font-size: 1.2rem;">Conception, implémentation et sécurisation d'infrastructures critiques.</p>
+                <p style="max-width: 700px; font-size: 1.2rem;">Conception, implémentation et sécurisation
+                    d'infrastructures critiques.</p>
             </div>
 
             <div id="projects-grid" style="display: flex; flex-direction: column; gap: 4rem;">
-                
+
                 <!-- Project 0: Vulnerability Scanner -->
-                <div class="card" style="cursor: pointer;" onclick="handleCardClick(event, 'projet-0', 'projets/dev-api.html')">
+                <div class="card" style="cursor: pointer;"
+                    onclick="handleCardClick(event, 'projet-0', 'projets/dev-api.html')">
                     <div class="card-image-wrapper" style="height: 300px;">
-                        <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-4.0.3&auto=format&fit=crop&w=3840&q=80" alt="Kubernetes and Python code analysis">
+                        <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-4.0.3&auto=format&fit=crop&w=3840&q=80"
+                            alt="Kubernetes and Python code analysis">
                         <div class="card-image-overlay"></div>
                     </div>
                     <h3>Vulnerability Scanner as a Service</h3>
-                    <p style="color: var(--accent-green); font-weight: 600; margin-bottom: 1.5rem; font-size: 0.95rem;">PROJET EN COURS</p>
+                    <p style="color: var(--accent-green); font-weight: 600; margin-bottom: 1.5rem; font-size: 0.95rem;">
+                        PROJET EN COURS</p>
                     <p style="line-height: 1.8;">
-                        Développement d'une API permettant de soumettre une cible (IP ou image Docker) à analyser. Un worker Kubernetes orchestre et lance les scans appropriés (Nmap, Trivy, ClamAV). Les résultats sont normalisés, stockés et affichés sur un dashboard web avec un historique des vulnérabilités. L'architecture est pensée de manière extensible via une API de plugins et durcie pour un environnement de production.
+                        Développement d'une API permettant de soumettre une cible (IP ou image Docker) à analyser. Un
+                        worker Kubernetes orchestre et lance les scans appropriés (Nmap, Trivy, ClamAV). Les résultats
+                        sont normalisés, stockés et affichés sur un dashboard web avec un historique des vulnérabilités.
+                        L'architecture est pensée de manière extensible via une API de plugins et durcie pour un
+                        environnement de production.
                     </p>
                     <div style="margin-top: 2rem;">
                         <span class="tech-tag">Kubernetes</span>
@@ -224,18 +263,26 @@
                         <span class="tech-tag">Nmap</span>
                         <span class="tech-tag">CI/CD</span>
                     </div>
-                    </div>
+                </div>
 
                 <!-- Project 1 -->
-                <div class="card" style="cursor: pointer;" onclick="handleCardClick(event, 'projet-1', 'projets/conception-infra.html')">
+                <div class="card" style="cursor: pointer;"
+                    onclick="handleCardClick(event, 'projet-1', 'projets/conception-infra.html')">
                     <div class="card-image-wrapper" style="height: 300px;">
-                        <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?ixlib=rb-4.0.3&auto=format&fit=crop&w=3840&q=80" alt="Network infrastructure conceptual mapping">
+                        <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?ixlib=rb-4.0.3&auto=format&fit=crop&w=3840&q=80"
+                            alt="Network infrastructure conceptual mapping">
                         <div class="card-image-overlay"></div>
                     </div>
                     <h3>Conception d'Infrastructures Résilientes, Sécurisées et Audités</h3>
-                    <p style="color: var(--accent-blue); font-weight: 600; margin-bottom: 1.5rem; font-size: 0.95rem;">PROJET PHARE</p>
+                    <p style="color: var(--accent-blue); font-weight: 600; margin-bottom: 1.5rem; font-size: 0.95rem;">
+                        PROJET PHARE</p>
                     <p style="line-height: 1.8;">
-                        Conception, déploiement et configuration d'une maquette d'architecture d'entreprise sécurisée reposant sur Active Directory et Samba4 sous Linux. Segmentation réseau via l'implémentation de règles d'accès strictes (ACLs) et de pare-feu virtualisés (OPNsense/FortiGate). Intégration globale de FreeRADIUS pour centraliser et sécuriser l'authentification via VPN WireGuard. <strong>Durcissement de l'infrastructure globale en suivant les recommandations de l'ANSSI et audit de la posture de sécurité de l'AD via PingCastle.</strong>
+                        Conception, déploiement et configuration d'une maquette d'architecture d'entreprise sécurisée
+                        reposant sur Active Directory et Samba4 sous Linux. Segmentation réseau via l'implémentation de
+                        règles d'accès strictes (ACLs) et de pare-feu virtualisés (OPNsense/FortiGate). Intégration
+                        globale de FreeRADIUS pour centraliser et sécuriser l'authentification via VPN WireGuard.
+                        <strong>Durcissement de l'infrastructure globale en suivant les recommandations de l'ANSSI et
+                            audit de la posture de sécurité de l'AD via PingCastle.</strong>
                     </p>
                     <div style="margin-top: 2rem;">
                         <span class="tech-tag">Active Directory</span>
@@ -247,18 +294,28 @@
                         <span class="tech-tag">ZTNA</span>
                         <span class="tech-tag">ANSSI Guides</span>
                     </div>
-                    </div>
+                </div>
 
                 <!-- Project 2 -->
-                <div class="card" style="cursor: pointer;" onclick="handleCardClick(event, 'projet-2', 'projets/lab-soc.html')">
+                <div class="card" style="cursor: pointer;"
+                    onclick="handleCardClick(event, 'projet-2', 'projets/lab-soc.html')">
                     <div class="card-image-wrapper" style="height: 300px;">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=3840&q=80" alt="Cybersecurity dark conceptual interface">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=3840&q=80"
+                            alt="Cybersecurity dark conceptual interface">
                         <div class="card-image-overlay"></div>
                     </div>
                     <h3>Laboratoire SOC & Analyse de Télémétrie</h3>
-                    <p style="color: var(--accent-blue); font-weight: 600; margin-bottom: 1.5rem; font-size: 0.95rem;">PROJET PHARE</p>
+                    <p style="color: var(--accent-blue); font-weight: 600; margin-bottom: 1.5rem; font-size: 0.95rem;">
+                        PROJET PHARE</p>
                     <p style="line-height: 1.8;">
-                        Orchestration d'un environnement virtualisé et conteneurisé (Docker) hébergeant des architectures de serveurs web. Surveillance proactive assurée par le déploiement d'agents EDR/XDR (Wazuh et Elastic Defend) corrélant l'ensemble de la télémétrie système et réseau au sein des SIEM Splunk et Elastic. Réalisation de campagnes offensives contrôlées (simulations d'injections SQL, XSS, et pivots via Metasploit) dans le but d'analyser la Kill Chain, cartographier les comportements malveillants selon la matrice MITRE ATT&CK, et concevoir des règles de détection personnalisées. <strong>Mise en conformité continue des serveurs via des scans de vulnérabilités OpenSCAP.</strong>
+                        Orchestration d'un environnement virtualisé et conteneurisé (Docker) hébergeant des
+                        architectures de serveurs web. Surveillance proactive assurée par le déploiement d'agents
+                        EDR/XDR (Wazuh et Elastic Defend) corrélant l'ensemble de la télémétrie système et réseau au
+                        sein des SIEM Splunk et Elastic. Réalisation de campagnes offensives contrôlées (simulations
+                        d'injections SQL, XSS, et pivots via Metasploit) dans le but d'analyser la Kill Chain,
+                        cartographier les comportements malveillants selon la matrice MITRE ATT&CK, et concevoir des
+                        règles de détection personnalisées. <strong>Mise en conformité continue des serveurs via des
+                            scans de vulnérabilités OpenSCAP.</strong>
                     </p>
                     <div style="margin-top: 2rem;">
                         <span class="tech-tag">Splunk</span>
@@ -269,45 +326,56 @@
                         <span class="tech-tag">OpenSCAP</span>
                         <span class="tech-tag">MITRE ATT&CK</span>
                     </div>
-                    </div>
+                </div>
 
                 <!-- Project 3 -->
-                <div class="card" style="cursor: pointer;" onclick="handleCardClick(event, 'projet-3', 'projets/maintenance-sys-et-hard.html')">
+                <div class="card" style="cursor: pointer;"
+                    onclick="handleCardClick(event, 'projet-3', 'projets/maintenance-sys-et-hard.html')">
                     <div class="card-image-wrapper" style="height: 300px;">
-                        <img src="https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?ixlib=rb-4.0.3&auto=format&fit=crop&w=3840&q=80" alt="Computer hardware maintenance">
+                        <img src="https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?ixlib=rb-4.0.3&auto=format&fit=crop&w=3840&q=80"
+                            alt="Computer hardware maintenance">
                         <div class="card-image-overlay"></div>
                     </div>
                     <h3>Maintenance Systèmes & Hardware</h3>
-                    <p style="color: var(--accent-blue); font-weight: 600; margin-bottom: 1.5rem; font-size: 0.95rem;">ENGAGEMENT ASSOCIATIF</p>
+                    <p style="color: var(--accent-blue); font-weight: 600; margin-bottom: 1.5rem; font-size: 0.95rem;">
+                        ENGAGEMENT ASSOCIATIF</p>
                     <p style="line-height: 1.8;">
-                        Engagement associatif actif au sein d'Isen Repair et projets personnels de revalorisation de parcs informatiques. Diagnostic de pannes matérielles, opérations de réparation, optimisation système et déploiement d'images sécurisées sous environnements Windows et distributions Linux (Debian).
+                        Engagement associatif actif au sein d'Isen Repair et projets personnels de revalorisation de
+                        parcs informatiques. Diagnostic de pannes matérielles, opérations de réparation, optimisation
+                        système et déploiement d'images sécurisées sous environnements Windows et distributions Linux
+                        (Debian).
                     </p>
                     <div style="margin-top: 2rem;">
                         <span class="tech-tag">SysAdmin</span>
                         <span class="tech-tag">Windows</span>
                         <span class="tech-tag">Windows Server</span>
                         <span class="tech-tag">Linux</span>
-                        <span class="tech-tag">Hardware Lifecycle</span>
+                        <span class="tech-tag">Hardware</span>
                     </div>
-                    </div>
+                </div>
 
                 <!-- Project 4 -->
-                <div class="card" style="cursor: pointer;" onclick="handleCardClick(event, 'projet-4', 'projets/echec-en-C.html')">
+                <div class="card" style="cursor: pointer;"
+                    onclick="handleCardClick(event, 'projet-4', 'projets/echec-en-C.html')">
                     <div class="card-image-wrapper" style="height: 300px;">
-                        <img src="https://images.unsplash.com/photo-1529699211952-734e80c4d42b?ixlib=rb-4.0.3&auto=format&fit=crop&w=3840&q=80" alt="Chess board and algorithmic focus">
+                        <img src="https://images.unsplash.com/photo-1529699211952-734e80c4d42b?ixlib=rb-4.0.3&auto=format&fit=crop&w=3840&q=80"
+                            alt="Chess board and algorithmic focus">
                         <div class="card-image-overlay"></div>
                     </div>
                     <h3>Moteur de Jeu d'Échecs en Langage C</h3>
-                    <p style="color: var(--accent-blue); font-weight: 600; margin-bottom: 1.5rem; font-size: 0.95rem;">SIDE PROJECT</p>
+                    <p style="color: var(--accent-blue); font-weight: 600; margin-bottom: 1.5rem; font-size: 0.95rem;">
+                        SIDE PROJECT</p>
                     <p style="line-height: 1.8;">
-                        Développement d'un moteur de jeu d'échecs complet en C natif. Focus sur l'ingénierie logicielle bas niveau : optimisation d'algorithmes complexes, gestion et allocation dynamique de la mémoire, structures de données optimisées et logique d'évaluation de mouvements.
+                        Développement d'un moteur de jeu d'échecs complet en C natif. Focus sur l'ingénierie logicielle
+                        bas niveau : optimisation d'algorithmes complexes, gestion et allocation dynamique de la
+                        mémoire, structures de données optimisées et logique d'évaluation de mouvements.
                     </p>
                     <div style="margin-top: 2rem;">
                         <span class="tech-tag">Langage C</span>
                         <span class="tech-tag">Algorithmie</span>
                         <span class="tech-tag">Gestion de la mémoire</span>
                     </div>
-                    </div>
+                </div>
             </div>
 
             <!-- Case Study Template (Hidden by default) -->
@@ -315,33 +383,43 @@
                 <button class="btn btn-secondary" style="margin-bottom: 3rem;" onclick="closeCaseStudy()">
                     <i class="fa-solid fa-arrow-left" style="margin-right: 0.5rem;"></i> Retour aux réalisations
                 </button>
-                
+
                 <div id="cs-header" style="margin-bottom: 3rem;">
-                    <h2 id="cs-title" class="gradient-text-blue" style="font-size: 2.5rem; margin-bottom: 1.5rem;">Titre du Projet</h2>
+                    <h2 id="cs-title" class="gradient-text-blue" style="font-size: 2.5rem; margin-bottom: 1.5rem;">Titre
+                        du Projet</h2>
                     <div class="card-image-wrapper" style="height: 400px; border-radius: 16px; margin: 0;">
                         <img id="cs-image" src="" alt="Project Image">
-                        <div class="card-image-overlay" style="background: linear-gradient(to bottom, transparent, var(--bg-base));"></div>
+                        <div class="card-image-overlay"
+                            style="background: linear-gradient(to bottom, transparent, var(--bg-base));"></div>
                     </div>
                 </div>
 
                 <div id="cs-content" style="max-width: 900px; margin: 0 auto; font-size: 1.15rem; line-height: 1.8;">
-                    <h3 style="color: var(--accent-green); margin-bottom: 1rem;"><i class="fa-solid fa-circle-exclamation"></i> Problématique</h3>
+                    <h3 style="color: var(--accent-green); margin-bottom: 1rem;"><i
+                            class="fa-solid fa-circle-exclamation"></i> Problématique</h3>
                     <p id="cs-problematic" style="margin-bottom: 3rem; color: var(--text-secondary);"></p>
 
-                    <h3 style="color: var(--accent-blue); margin-bottom: 1rem;"><i class="fa-solid fa-screwdriver-wrench"></i> Méthodologie</h3>
+                    <h3 style="color: var(--accent-blue); margin-bottom: 1rem;"><i
+                            class="fa-solid fa-screwdriver-wrench"></i> Méthodologie</h3>
                     <p id="cs-methodology" style="margin-bottom: 3rem; color: var(--text-secondary);"></p>
 
-                    <h3 style="color: #ef4444; margin-bottom: 1rem;"><i class="fa-solid fa-triangle-exclamation"></i> Obstacles</h3>
+                    <h3 style="color: #ef4444; margin-bottom: 1rem;"><i class="fa-solid fa-triangle-exclamation"></i>
+                        Obstacles</h3>
                     <p id="cs-obstacles" style="margin-bottom: 3rem; color: var(--text-secondary);"></p>
 
-                    <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;"><i class="fa-solid fa-check-circle" style="color: var(--accent-green); margin-right: 0.5rem;"></i> Solution</h4>
-                <p id="cs-solutions" style="line-height: 1.8; color: var(--text-secondary);"></p>
+                    <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;"><i class="fa-solid fa-check-circle"
+                            style="color: var(--accent-green); margin-right: 0.5rem;"></i> Solution</h4>
+                    <p id="cs-solutions" style="line-height: 1.8; color: var(--text-secondary);"></p>
+                </div>
+
+                <div id="cs-tags"
+                    style="margin-top: 3rem; display: flex; flex-wrap: wrap; gap: 0.8rem; justify-content: flex-start;">
+                </div>
+
+                <button class="btn btn-secondary close-modal" onclick="closeCaseStudy()"
+                    style="margin-top: 3rem; width: 100%; display: none;" id="cs-bottom-close">Retour aux
+                    realisations</button>
             </div>
-            
-            <div id="cs-tags" style="margin-top: 3rem; display: flex; flex-wrap: wrap; gap: 0.8rem; justify-content: flex-start;"></div>
-            
-            <button class="btn btn-secondary close-modal" onclick="closeCaseStudy()" style="margin-top: 3rem; width: 100%; display: none;" id="cs-bottom-close">Retour aux realisations</button>
-        </div>
         </div>
     </section>
 
@@ -351,19 +429,31 @@
             <div class="section-header">
                 <h2 class="gradient-text-green">Profil & Objectifs</h2>
             </div>
-            
+
             <div style="max-width: 900px; margin-bottom: 4rem;">
-                <h3 style="color: var(--text-primary); margin-bottom: 1rem;"><i class="fa-solid fa-user-shield" style="margin-right: 0.8rem; color: var(--accent-green);"></i> Qui suis-je ?</h3>
+                <h3 style="color: var(--text-primary); margin-bottom: 1rem;"><i class="fa-solid fa-user-shield"
+                        style="margin-right: 0.8rem; color: var(--accent-green);"></i> Qui suis-je ?</h3>
                 <p style="font-size: 1.15rem; line-height: 1.8;">
-                    Curieux de nature, rigoureux et constamment à la recherche de nouveaux défis techniques (CTFs, veille active). Actuellement en cours de validation de mes heures pour le <strong>Permis B</strong>. Mon parcours atypique, forgé dans des environnements exigeants, constitue ma plus grande force pour anticiper et réagir face aux menaces numériques.
+                    Curieux de nature, rigoureux et constamment à la recherche de nouveaux défis techniques (CTFs,
+                    veille active). Actuellement en cours de validation de mes heures pour le <strong>Permis B</strong>.
+                    Mon parcours atypique, forgé dans des environnements exigeants, constitue ma plus grande force pour
+                    anticiper et réagir face aux menaces numériques.
                 </p>
                 <div style="margin-top: 1.5rem;">
-                    <span class="stat-badge" style="display: inline-block; background: rgba(59, 130, 246, 0.1); color: var(--text-primary); border: 1px solid rgba(59, 130, 246, 0.2);"><i class="fa-solid fa-language" style="color: var(--accent-blue); margin-right: 0.5rem;"></i> IELTS: 7.0 (Natif)</span>
+                    <span class="stat-badge"
+                        style="display: inline-block; background: rgba(59, 130, 246, 0.1); color: var(--text-primary); border: 1px solid rgba(59, 130, 246, 0.2);"><i
+                            class="fa-solid fa-language" style="color: var(--accent-blue); margin-right: 0.5rem;"></i>
+                        IELTS: 7.0 (Natif)</span>
                 </div>
 
-                <h3 style="color: var(--text-primary); margin-top: 3rem; margin-bottom: 1rem;"><i class="fa-solid fa-bullseye" style="margin-right: 0.8rem; color: var(--accent-blue);"></i> Ce que je recherche</h3>
+                <h3 style="color: var(--text-primary); margin-top: 3rem; margin-bottom: 1rem;"><i
+                        class="fa-solid fa-bullseye" style="margin-right: 0.8rem; color: var(--accent-blue);"></i> Ce
+                    que je recherche</h3>
                 <p style="font-size: 1.15rem; line-height: 1.8;">
-                    Passionné par la protection des systèmes d'information, le durcissement d'infrastructures et l'analyse de logs cyber. Je recherche activement une <strong>alternance stimulante 12 mois dès septembre 2026</strong> en Administration d'Infrastructures/Réseaux ou en tant qu'Analyste SOC au sein d'une équipe dynamique où je pourrai apporter ma rigueur et ma réactivité.
+                    Passionné par la protection des systèmes d'information, le durcissement d'infrastructures et
+                    l'analyse de logs cyber. Je recherche activement une <strong>alternance stimulante 12 mois dès
+                        septembre 2026</strong> en Administration d'Infrastructures/Réseaux ou en tant qu'Analyste SOC
+                    au sein d'une équipe dynamique où je pourrai apporter ma rigueur et ma réactivité.
                 </p>
             </div>
 
@@ -371,36 +461,50 @@
                 <!-- Marine Experience -->
                 <div class="card" style="grid-column: 1 / -1;">
                     <div class="card-image-wrapper" style="height: 250px;">
-                        <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?ixlib=rb-4.0.3&auto=format&fit=crop&w=3840&q=80" alt="Sailing on open water representing leadership">
+                        <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?ixlib=rb-4.0.3&auto=format&fit=crop&w=3840&q=80"
+                            alt="Sailing on open water representing leadership">
                         <div class="card-image-overlay"></div>
                     </div>
                     <h3><i class="fa-solid fa-anchor"></i> The Marine & Leadership Experience</h3>
                     <p style="color: var(--text-primary); margin-top: 1rem;">
-                        Formation BPJEPS Voile Multi-Support et passionné de voile . La direction d'une équipe de voile (comme l'équipe <em>Optimist Challenge</em> ) s'apparente directement à la gestion de la sécurité en entreprise :
+                        Formation BPJEPS Voile Multi-Support et passionné de voile . La direction d'une équipe de voile
+                        (comme l'équipe <em>Optimist Challenge</em> ) s'apparente directement à la gestion de la
+                        sécurité en entreprise :
                     </p>
-                    <ul style="list-style-type: none; margin-top: 2rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 1.5rem;">
+                    <ul
+                        style="list-style-type: none; margin-top: 2rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 1.5rem;">
                         <li style="padding-left: 1.5rem; border-left: 3px solid var(--accent-blue);">
-                            <strong style="color: var(--text-primary); display: block; margin-bottom: 0.5rem;">Gestion du stress et des risques:</strong> 
-                            Prendre des décisions critiques en mer face aux éléments imprévisibles exige la même rigueur que la gestion d'un incident de sécurité ou d'une alerte SOC sous haute pression.
+                            <strong style="color: var(--text-primary); display: block; margin-bottom: 0.5rem;">Gestion
+                                du stress et des risques:</strong>
+                            Prendre des décisions critiques en mer face aux éléments imprévisibles exige la même rigueur
+                            que la gestion d'un incident de sécurité ou d'une alerte SOC sous haute pression.
                         </li>
                         <li style="padding-left: 1.5rem; border-left: 3px solid var(--accent-green);">
-                            <strong style="color: var(--text-primary); display: block; margin-bottom: 0.5rem;">Esprit d'équipe & Pédagogie:</strong> 
-                            Encadrer des groupes de tous âges, rédiger des bilans de progression et coordonner des manœuvres complexes nécessite une communication claire — un atout majeur pour collaborer au sein d'un SOC ou expliquer des risques techniques complexes à la direction.
+                            <strong style="color: var(--text-primary); display: block; margin-bottom: 0.5rem;">Esprit
+                                d'équipe & Pédagogie:</strong>
+                            Encadrer des groupes de tous âges, rédiger des bilans de progression et coordonner des
+                            manœuvres complexes nécessite une communication claire — un atout majeur pour collaborer au
+                            sein d'un SOC ou expliquer des risques techniques complexes à la direction.
                         </li>
                     </ul>
                 </div>
 
                 <!-- Sports Adaptability -->
                 <div class="card">
-                    <h3><i class="fa-solid fa-person-running" style="color: var(--accent-blue); margin-bottom: 1rem; font-size: 2rem;"></i><br> Course à pied</h3>
+                    <h3><i class="fa-solid fa-person-running"
+                            style="color: var(--accent-blue); margin-bottom: 1rem; font-size: 2rem;"></i><br> Course à
+                        pied</h3>
                     <p>Endurance, discipline et résilience face à l'effort prolongé.</p>
                 </div>
                 <div class="card">
-                    <h3><i class="fa-solid fa-water" style="color: var(--accent-green); margin-bottom: 1rem; font-size: 2rem;"></i><br> Wingfoil</h3>
+                    <h3><i class="fa-solid fa-water"
+                            style="color: var(--accent-green); margin-bottom: 1rem; font-size: 2rem;"></i><br> Wingfoil
+                    </h3>
                     <p>Agilité, équilibre dynamique et adaptabilité immédiate face aux éléments.</p>
                 </div>
                 <div class="card">
-                    <h3><i class="fa-solid fa-snowflake" style="color: #cbd5e1; margin-bottom: 1rem; font-size: 2rem;"></i><br> Snowboard</h3>
+                    <h3><i class="fa-solid fa-snowflake"
+                            style="color: #cbd5e1; margin-bottom: 1rem; font-size: 2rem;"></i><br> Snowboard</h3>
                     <p>Engagement total, réactivité et prise de risque calculée.</p>
                 </div>
             </div>
@@ -418,8 +522,9 @@
             <div class="contact-layout">
                 <!-- Form -->
                 <div>
-                    <form id="secure-contact-form" class="card" style="padding: 3rem;" name="contact" netlify data-netlify="true" netlify-honeypot="hp-field">
-                        
+                    <form id="secure-contact-form" class="card" style="padding: 3rem;" name="contact" netlify
+                        data-netlify="true" netlify-honeypot="hp-field">
+
                         <!-- Anti-Spam Honeypot (Hidden from users) -->
                         <div class="form-group honeypot-field" aria-hidden="true" style="display: none;">
                             <label for="hp-field">Leave this field empty</label>
@@ -428,20 +533,24 @@
 
                         <div class="form-group">
                             <label for="name">Identifiant (Nom)</label>
-                            <input type="text" id="name" name="name" class="form-control" required placeholder="John Doe">
+                            <input type="text" id="name" name="name" class="form-control" required
+                                placeholder="John Doe">
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="email">Adresse de Retour (Email)</label>
-                            <input type="email" id="email" name="email" class="form-control" required placeholder="john@entreprise.com">
+                            <input type="email" id="email" name="email" class="form-control" required
+                                placeholder="john@entreprise.com">
                         </div>
 
                         <div class="form-group">
                             <label for="message">Payload (Message)</label>
-                            <textarea id="message" name="message" rows="6" class="form-control" required placeholder="Votre message..."></textarea>
+                            <textarea id="message" name="message" rows="6" class="form-control" required
+                                placeholder="Votre message..."></textarea>
                         </div>
 
-                        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem; padding: 1.2rem;">
+                        <button type="submit" class="btn btn-primary"
+                            style="width: 100%; margin-top: 1rem; padding: 1.2rem;">
                             Transmettre les données <i class="fa-solid fa-paper-plane" style="margin-left: 0.8rem;"></i>
                         </button>
                     </form>
@@ -449,32 +558,38 @@
 
                 <!-- Professional Links -->
                 <div>
-                    <div class="card" style="background: transparent; border: none; padding: 0;">
+                    <div class="card contact-alt-card" style="background: transparent; border: none; padding: 0;">
                         <h3 style="margin-bottom: 1.5rem; color: var(--text-primary);">Vecteurs Alternatifs</h3>
                         <p style="font-size: 1.15rem; line-height: 1.8; color: var(--text-secondary);">
-                            Si vous préférez contourner le formulaire Web, vous pouvez initier un contact direct via linkedin :
+                            Si vous préférez contourner le formulaire Web, vous pouvez initier un contact direct via
+                            linkedin :
                         </p>
-                        
+
                         <div class="contact-links">
-                            <a href="https://linkedin.com/in/peter-chatzigianis" target="_blank" rel="noopener noreferrer">
-                                <span style="background: rgba(59, 130, 246, 0.1); padding: 0.8rem; border-radius: 8px;"><i class="fa-brands fa-linkedin" style="color: var(--accent-blue);"></i></span>
+                            <a href="https://linkedin.com/in/peter-chatzigianis" target="_blank"
+                                rel="noopener noreferrer">
+                                <span
+                                    style="background: rgba(59, 130, 246, 0.1); padding: 0.8rem; border-radius: 8px;"><i
+                                        class="fa-brands fa-linkedin" style="color: var(--accent-blue);"></i></span>
                                 LinkedIn Profil
                             </a>
                             <a href="https://github.com/p-chatzi" target="_blank" rel="noopener noreferrer">
-                                <span style="background: rgba(59, 130, 246, 0.1); padding: 0.8rem; border-radius: 8px;"><i class="fa-brands fa-github" style="color: var(--accent-blue);"></i></span>
+                                <span
+                                    style="background: rgba(59, 130, 246, 0.1); padding: 0.8rem; border-radius: 8px;"><i
+                                        class="fa-brands fa-github" style="color: var(--accent-blue);"></i></span>
                                 GitHub Repositories
                             </a>
                         </div>
-                        
-                        <div class="mobile-alley-credit">
-                            UX & Design inspiré par Alley.com
-                        </div>
                     </div>
                 </div>
+                <div class="mobile-alley-credit">
+                    UX & Design inspiré par Alley.com
+                </div>
             </div>
-            
+
             <!-- Mobile Scroll to Top Button -->
-            <button class="mobile-scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Retour en haut">
+            <button class="mobile-scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+                aria-label="Retour en haut">
                 <i class="fa-solid fa-arrow-up"></i>
             </button>
         </div>
@@ -484,21 +599,25 @@
     <div id="mobile-menu-overlay">
         <div class="mobile-menu-header">
             <button id="mobile-menu-close"><i class="fa-solid fa-xmark"></i></button>
-            <span class="mobile-menu-brand" onclick="navigateTo('home')" style="cursor: pointer; border: 2px solid #e0f2fe; border-radius: 8px; padding: 0.2rem 0.8rem;">P.C.</span>
+            <span class="mobile-menu-brand" onclick="navigateTo('home')"
+                style="cursor: pointer; border: 2px solid #e0f2fe; border-radius: 8px; padding: 0.2rem 0.8rem;">P.C.</span>
         </div>
         <div class="mobile-menu-content">
             <ul class="mobile-menu-big">
                 <li><a href="#" data-target="home" class="active">Gateway</a></li>
                 <li><a href="#" data-target="projects">Projets</a></li>
                 <li><a href="#" data-target="tech">Expertise</a></li>
-                <li><a href="https://wrought-severity-rectangle.ngrok-free.dev" target="_blank" rel="noopener noreferrer">CTF <i class="fa-solid fa-flag" style="margin-left: 0.3rem;"></i></a></li>
+                <li><a href="https://wrought-severity-rectangle.ngrok-free.dev" target="_blank"
+                        rel="noopener noreferrer">CTF <i class="fa-solid fa-flag" style="margin-left: 0.3rem;"></i></a>
+                </li>
             </ul>
             <ul class="mobile-menu-small" style="margin-top: 1rem;">
                 <li><a href="#" data-target="about">A propos</a></li>
                 <li><a href="#" data-target="contact">Contact</a></li>
             </ul>
             <div class="mobile-menu-socials">
-                <a href="https://linkedin.com/in/peter-chatzigianis" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://linkedin.com/in/peter-chatzigianis" target="_blank"><i
+                        class="fa-brands fa-linkedin"></i></a>
                 <a href="https://github.com/peter-chatzigianis" target="_blank"><i class="fa-brands fa-github"></i></a>
             </div>
         </div>
@@ -512,7 +631,8 @@
             <a href="#" data-target="contact">Contact</a>
         </div>
         <div class="mobile-footer-socials">
-            <a href="https://linkedin.com/in/peter-chatzigianis" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://linkedin.com/in/peter-chatzigianis" target="_blank"><i
+                    class="fa-brands fa-linkedin"></i></a>
         </div>
     </footer>
 
@@ -520,4 +640,5 @@
     <script src="data.js"></script>
     <script src="app.js"></script>
 </body>
+
 </html>

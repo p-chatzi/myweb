@@ -72,12 +72,14 @@ p { font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 1.5rem; line
 .gradient-text-blue {
     background: linear-gradient(135deg, #60a5fa, #3b82f6);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .gradient-text-green {
     background: linear-gradient(135deg, #34d399, #10b981);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -521,18 +523,17 @@ nav {
         transform: scale(0.98) !important;
     }
     .card h3 {
-        order: 1;
         font-family: 'Space Grotesk', sans-serif;
         font-size: 2.2rem;
         line-height: 1.1;
         margin-bottom: 1rem;
     }
-    .card > p:not(.tech-tag) {
-        order: 2;
+    .card p:not(.tech-tag) {
         font-size: 1.1rem;
         margin-bottom: 1.5rem;
         display: -webkit-box;
         -webkit-line-clamp: 2;
+        line-clamp: 2;
         -webkit-box-orient: vertical;
         overflow: hidden;
     }
@@ -747,5 +748,14 @@ nav {
         margin-top: 3.5rem;
         font-family: 'Space Grotesk', sans-serif;
         opacity: 0.6;
+    }
+    .contact-alt-card {
+        padding: 1.5rem !important;
+    }
+    .contact-alt-card > p {
+        -webkit-line-clamp: unset !important;
+        line-clamp: unset !important;
+        display: block !important;
+        overflow: visible !important;
     }
 }
