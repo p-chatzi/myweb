@@ -421,8 +421,8 @@ nav {
     #home { order: 1; background-color: #372B3D !important; }
     #projects { order: 2; background-color: #473346 !important; }
     #tech { order: 3; background-color: #57384D !important; }
-    #about { display: none !important; }
-    #contact { display: none !important; }
+    #about { order: 4; background-color: #473346 !important; }
+    #contact { order: 5; background-color: #372B3D !important; }
     
     .view {
         display: block !important;
