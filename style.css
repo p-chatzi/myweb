@@ -698,3 +698,54 @@ nav {
 @media (max-width: 900px) {
     .contact-layout { grid-template-columns: 1fr; gap: 3rem; }
 }
+
+/* Mobile Scroll Top Button */
+.mobile-scroll-top {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .mobile-scroll-top {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        height: 60px;
+        background-color: var(--accent-blue);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        font-size: 1.5rem;
+        cursor: pointer;
+        margin: 4rem auto 1rem auto;
+        box-shadow: 0 4px 14px 0 var(--glow-blue);
+        transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+    .mobile-scroll-top:active {
+        transform: scale(0.9);
+        background-color: #2563eb;
+    }
+}
+
+/* Mobile-only Alley.com Credit & Order Fix */
+.mobile-alley-credit {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .card .contact-links {
+        order: 3;
+        width: 100%;
+        margin-top: 2rem;
+    }
+    .mobile-alley-credit {
+        display: block;
+        order: 4;
+        font-size: 0.85rem;
+        color: var(--text-secondary);
+        text-align: center;
+        margin-top: 3.5rem;
+        font-family: 'Space Grotesk', sans-serif;
+        opacity: 0.6;
+    }
+}
