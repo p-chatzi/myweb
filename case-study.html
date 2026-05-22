@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Study | Peter Chatzigianis</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { display: block !important; overflow-y: auto !important; }
+        #case-study-standalone { padding: 2rem; max-width: 900px; margin: 8rem auto 2rem auto; background-color: transparent; }
+        @media (max-width: 768px) { #case-study-standalone { padding: 1rem; margin-top: 8rem; } }
+    </style>
+</head>
+<body>
+    <nav style="position: fixed !important; top: 0; left: 0; width: 100%; background: transparent !important; border-bottom: none !important; z-index: 6000 !important; padding: 1.5rem 5%; pointer-events: none;">
+        <div style="display: flex !important; align-items: center; gap: 1.5rem; pointer-events: auto;">
+            <button id="mobile-nav-toggle" style="font-size: 2.5rem; color: var(--text-primary); background: none; border: none; cursor: pointer;">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <a href="/" style="font-family: 'Space Grotesk', sans-serif; font-size: 1.8rem; font-weight: 700; color: var(--text-primary); cursor: pointer; border: 2px solid var(--text-primary); border-radius: 8px; padding: 0.2rem 0.8rem; display: inline-block; text-decoration: none;">P.C.</a>
+        </div>
+    </nav>
+    <div id="case-study-standalone">
+        <a href="/#projects" class="btn btn-secondary" style="text-decoration: none; display: inline-block; margin-bottom: 2rem;"><i class="fa-solid fa-arrow-left"></i> Retour aux réalisations</a>
+        <h2 id="cs-title" class="gradient-text-blue" style="font-size: 2.5rem; margin-bottom: 1.5rem;"></h2>
+        <div id="cs-tags-container" style="margin-bottom: 1.5rem;"></div>
+        <p id="cs-tags-desc" style="font-size: 1.1rem; line-height: 1.6; color: var(--text-secondary); margin-bottom: 3rem; display: none;"></p>
+        <img id="cs-image" src="" alt="" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 12px; margin-bottom: 3rem; border: 1px solid var(--border-color);">
+        <div class="grid" style="grid-template-columns: 1fr; gap: 3rem;">
+            <div>
+                <h3 style="color: var(--accent-blue); margin-bottom: 1rem;"><i class="fa-solid fa-crosshairs"></i> Problématique</h3>
+                <p id="cs-problematic" style="font-size: 1.15rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 2rem;"></p>
+                <h3 style="color: var(--accent-green); margin-bottom: 1rem;"><i class="fa-solid fa-gears"></i> Approche & Méthodologie</h3>
+                <p id="cs-methodology" style="font-size: 1.15rem; line-height: 1.8; color: var(--text-secondary);"></p>
+            </div>
+            <div style="background: rgba(0,0,0,0.2); padding: 2rem; border-radius: 12px; border: 1px solid var(--border-color);">
+                <h3 style="color: #ef4444; margin-bottom: 1rem;"><i class="fa-solid fa-triangle-exclamation"></i> Obstacles</h3>
+                <p id="cs-obstacles" style="margin-bottom: 3rem; color: var(--text-secondary);"></p>
+                <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;"><i class="fa-solid fa-check-circle" style="color: var(--accent-green); margin-right: 0.5rem;"></i> Solution</h4>
+                <p id="cs-solutions" style="line-height: 1.8; color: var(--text-secondary);"></p>
+            </div>
+        </div>
+        <a href="/#projects" class="btn btn-secondary" style="margin-top: 3rem; width: 100%; text-decoration: none; text-align: center; display: block;">Retour aux réalisations</a>
+    </div>
+    <div id="mobile-menu-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: #2A4F50; z-index: 9999; flex-direction: column;">
+        <div style="display: flex; justify-content: space-between; padding: 1.5rem 5%; align-items: center;">
+            <button id="mobile-menu-close" style="background: none; border: none; color: white; font-size: 3.6rem; cursor: pointer;"><i class="fa-solid fa-xmark"></i></button>
+            <a href="/" style="color: white; text-decoration: none; font-family: 'Space Grotesk', sans-serif; font-size: 1.8rem; font-weight: 700; border: 2px solid white; border-radius: 8px; padding: 0.2rem 0.8rem;">P.C.</a>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; flex: 1;">
+            <ul style="list-style: none; padding: 0; text-align: center; display: flex; flex-direction: column; gap: 2rem;">
+                <li><a href="/#home" style="color: white; text-decoration: none; font-size: 2.5rem; font-family: 'Space Grotesk', sans-serif; font-weight: 700;">Gateway</a></li>
+                <li><a href="/#tech" style="color: white; text-decoration: none; font-size: 2.5rem; font-family: 'Space Grotesk', sans-serif; font-weight: 700;">Expertise</a></li>
+                <li><a href="/#projects" style="color: white; text-decoration: none; font-size: 2.5rem; font-family: 'Space Grotesk', sans-serif; font-weight: 700;">Projets</a></li>
+            </ul>
+        </div>
+    </div>
+    <script src="/data.js"></script>
+    <script>
+        document.getElementById('mobile-nav-toggle').addEventListener('click', () => { document.getElementById('mobile-menu-overlay').style.display = 'flex'; });
+        document.getElementById('mobile-menu-close').addEventListener('click', () => { document.getElementById('mobile-menu-overlay').style.display = 'none'; });
+        
+        const path = window.location.pathname;
+        const isProjet = path.includes('/projets/');
+        const isTech = path.includes('/expertise/');
+        document.body.style.backgroundColor = isProjet ? '#473346' : (isTech ? '#57384D' : '#372B3D');
+        
+        const parts = path.split('/').filter(Boolean);
+        const id = parts[parts.length - 1];
+        
+        const data = window.caseStudiesData[id];
+        if(data) {
+            document.title = data.title + ' | Peter Chatzigianis';
+            document.getElementById('cs-title').innerText = data.title;
+            
+            if (data.tags && data.tags.length > 0) {
+                const tagsHtml = data.tags.map(t => `<span class="tech-tag" style="display: inline-block; background: rgba(59,130,246,0.1); color: var(--accent-blue); padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-right: 0.5rem; margin-bottom: 0.5rem; border: 1px solid rgba(59,130,246,0.2);">${t}</span>`).join('');
+                document.getElementById('cs-tags-container').innerHTML = tagsHtml;
+                if (data.tagsDesc) {
+                    const descEl = document.getElementById('cs-tags-desc');
+                    descEl.innerText = data.tagsDesc;
+                    descEl.style.display = 'block';
+                }
+            }
+            
+            document.getElementById('cs-image').src = data.image;
+            document.getElementById('cs-problematic').innerText = data.problematic;
+            document.getElementById('cs-methodology').innerText = data.methodology;
+            document.getElementById('cs-obstacles').innerText = data.obstacles;
+            document.getElementById('cs-solutions').innerText = data.solutions;
+        } else {
+            document.getElementById('cs-title').innerText = "Page non trouvée";
+        }
+    </script>
+</body>
+</html>

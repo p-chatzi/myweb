@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Durcissement & Conformité (Hardening) | Peter Chatzigianis</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Specific overrides for standalone pages */
+        body {
+            display: block !important;
+            overflow-y: auto !important;
+            background-color: #57384D !important;
+        }
+        #case-study-standalone {
+            padding: 2rem;
+            max-width: 900px;
+            margin: 5rem auto 2rem auto;
+            background-color: transparent;
+        }
+        .close-modal {
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+        @media (max-width: 768px) {
+            #case-study-standalone {
+                padding: 1rem;
+                margin-top: 6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="mobile-nav-controls" style="display: flex; align-items: center; gap: 1.5rem; pointer-events: auto;">
+            <button id="mobile-nav-toggle" class="btn-icon" style="font-size: 2.5rem; color: var(--text-primary); background: none; border: none; cursor: pointer;">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <a href="../index.html" class="mobile-nav-brand-pc" style="font-family: 'Space Grotesk', sans-serif; font-size: 1.8rem; font-weight: 700; color: var(--text-primary); cursor: pointer; border: 2px solid var(--text-primary); border-radius: 8px; padding: 0.2rem 0.8rem; display: inline-block; text-decoration: none;">P.C.</a>
+        </div>
+    </nav>
+
+    <div id="case-study-standalone">
+        <a href="../index.html" class="btn btn-secondary close-modal" style="text-decoration: none;"><i class="fa-solid fa-arrow-left"></i> Retour aux réalisations</a>
+        
+        <div class="section-header">
+            <h2 class="gradient-text-blue" style="font-size: 2.5rem; text-align: left; margin-bottom: 1.5rem;">Durcissement & Conformité (Hardening)</h2>
+        </div>
+        
+        <img src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-4.0.3&auto=format&fit=crop&w=3840&q=80" alt="Durcissement & Conformité (Hardening)" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 12px; margin-bottom: 3rem; border: 1px solid var(--border-color);">
+
+        <div class="grid" style="grid-template-columns: 1fr; gap: 3rem;">
+            <div>
+                <h3 style="color: var(--accent-blue); margin-bottom: 1rem;"><i class="fa-solid fa-crosshairs"></i> Problématique</h3>
+                <p style="font-size: 1.15rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 2rem;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                
+                <h3 style="color: var(--accent-green); margin-bottom: 1rem;"><i class="fa-solid fa-gears"></i> Approche & Méthodologie</h3>
+                <p style="font-size: 1.15rem; line-height: 1.8; color: var(--text-secondary);">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+            
+            <div style="background: rgba(0,0,0,0.2); padding: 2rem; border-radius: 12px; border: 1px solid var(--border-color);">
+                <h3 style="color: #ef4444; margin-bottom: 1rem;"><i class="fa-solid fa-triangle-exclamation"></i> Obstacles</h3>
+                <p style="margin-bottom: 3rem; color: var(--text-secondary);">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+                <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;"><i class="fa-solid fa-check-circle" style="color: var(--accent-green); margin-right: 0.5rem;"></i> Solution</h4>
+                <p style="line-height: 1.8; color: var(--text-secondary);">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+        </div>
+        <a href="../index.html" class="btn btn-secondary" style="margin-top: 3rem; width: 100%; text-decoration: none; text-align: center; display: block;">Retour aux réalisations</a>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: #2A4F50; z-index: 9999; flex-direction: column;">
+        <div class="mobile-menu-header" style="display: flex; justify-content: space-between; padding: 1.5rem 5%; align-items: center;">
+            <button id="mobile-menu-close" style="background: none; border: none; color: white; font-size: 3.6rem; cursor: pointer;"><i class="fa-solid fa-xmark"></i></button>
+            <a href="../index.html" style="color: white; text-decoration: none; font-family: 'Space Grotesk', sans-serif; font-size: 1.8rem; font-weight: 700; border: 2px solid white; border-radius: 8px; padding: 0.2rem 0.8rem;">P.C.</a>
+        </div>
+        <div class="mobile-menu-content" style="display: flex; flex-direction: column; align-items: center; justify-content: center; flex: 1; gap: 2rem;">
+            <ul style="list-style: none; padding: 0; text-align: center; display: flex; flex-direction: column; gap: 2rem;">
+                <li><a href="../index.html#home" style="color: white; text-decoration: none; font-size: 2.5rem; font-family: 'Space Grotesk', sans-serif; font-weight: 700;">Gateway</a></li>
+                <li><a href="../index.html#tech" style="color: white; text-decoration: none; font-size: 2.5rem; font-family: 'Space Grotesk', sans-serif; font-weight: 700;">Expertise</a></li>
+                <li><a href="../index.html#projects" style="color: white; text-decoration: none; font-size: 2.5rem; font-family: 'Space Grotesk', sans-serif; font-weight: 700;">Projets</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('mobile-nav-toggle').addEventListener('click', () => {
+            document.getElementById('mobile-menu-overlay').style.display = 'flex';
+        });
+        document.getElementById('mobile-menu-close').addEventListener('click', () => {
+            document.getElementById('mobile-menu-overlay').style.display = 'none';
+        });
+    </script>
+</body>
+</html>
