@@ -46,6 +46,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 caseStudyView.style.opacity = '0';
             }
             document.querySelectorAll('.grid').forEach(g => g.style.display = '');
+            const projectsGrid = document.getElementById('projects-grid');
+            if (projectsGrid) projectsGrid.style.display = 'flex';
             return;
         }
 
@@ -55,6 +57,8 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
             if (caseStudyView) caseStudyView.style.display = 'none';
             document.querySelectorAll('.grid').forEach(g => g.style.display = '');
+            const projectsGrid = document.getElementById('projects-grid');
+            if (projectsGrid) projectsGrid.style.display = 'flex';
             window.scrollTo(0, 0);
         }, 400);
     };
