@@ -650,7 +650,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let isFetchingNews = false;
     let lastFetchTime = 0;
 
-    async function loadNews() {
+    async function loadNews(forceRefresh = false) {
         if (!$("#news-grid")) return;
         const active = FEEDS.filter(f => f.active);
         currentDisplayCount = cardsPerLoad;
@@ -667,18 +667,31 @@ document.addEventListener('DOMContentLoaded', () => {
         let hasCache = false;
         try {
             const cached = localStorage.getItem(CACHE_KEY);
-            if (cached) {
+            if (cached && Object.keys(feedsDataMap).length === 0) {
                 const parsed = JSON.parse(cached);
                 for (let source in parsed) {
                     parsed[source] = parsed[source].map(it => ({ ...it, date: it.date ? new Date(it.date) : null }));
                 }
                 feedsDataMap = parsed;
-                updateAllNewsItemsFromMap();
+                hasCache = true;
+            } else if (Object.keys(feedsDataMap).length > 0) {
                 hasCache = true;
             }
         } catch(e) {}
 
+        updateAllNewsItemsFromMap();
         renderSourceList();
+
+        // Determine which feeds actually need fetching
+        let feedsToFetch = active;
+        if (!forceRefresh) {
+            feedsToFetch = active.filter(f => !feedsDataMap[f.name] || feedsDataMap[f.name].length === 0);
+        }
+
+        if (feedsToFetch.length === 0) {
+            $("#news-status").innerHTML = "<strong>" + allNewsItems.length + "</strong> headlines loaded.";
+            return; // No need to hit the network
+        }
 
         // 2. Anti-Spam Check for Network Requests
         const now = Date.now();
@@ -692,22 +705,22 @@ document.addEventListener('DOMContentLoaded', () => {
         isFetchingNews = true;
         lastFetchTime = now;
 
-        if (!hasCache) {
-            $("#news-status").textContent = "Loading…";
-            renderSkeleton();
-        } else {
+        if (!hasCache || forceRefresh) {
             $("#news-status").textContent = "Updating feeds…";
         }
+        if (forceRefresh) {
+            renderSkeleton();
+        }
 
-        let okFeeds = 0;
+        let okFeeds = active.length - feedsToFetch.length;
         let errors = [];
         let completedFeeds = 0;
         
         const checkDone = () => {
             completedFeeds++;
-            if (completedFeeds === active.length) {
+            if (completedFeeds === feedsToFetch.length) {
                 isFetchingNews = false;
-                if (allNewsItems.length === 0) {
+                if (allNewsItems.length === 0 && errors.length > 0) {
                     showErrorState(errors, active.length);
                 } else {
                     $("#news-status").innerHTML =
@@ -735,8 +748,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // 4. Fetch Prioritization
         const primarySources = ["The Hacker News", "BleepingComputer"];
-        const primaryFeeds = active.filter(f => primarySources.includes(f.name));
-        const secondaryFeeds = active.filter(f => !primarySources.includes(f.name));
+        const primaryFeeds = feedsToFetch.filter(f => primarySources.includes(f.name));
+        const secondaryFeeds = feedsToFetch.filter(f => !primarySources.includes(f.name));
 
         // 3. Progressive Rendering
         primaryFeeds.forEach(fetchAndProcess);
@@ -765,7 +778,7 @@ document.addEventListener('DOMContentLoaded', () => {
             empty.appendChild(diag);
         }
         const btn = el("button", "btn btn-primary btn-sm", "Retry");
-        btn.onclick = loadNews; empty.appendChild(btn);
+        btn.onclick = () => loadNews(true); empty.appendChild(btn);
         grid.appendChild(empty);
         $("#news-status").textContent = "0 headlines · " + 0 + "/" + totalFeeds + " feeds ok";
         
@@ -792,7 +805,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const refreshBtn = $("#refresh-btn");
-    if (refreshBtn) refreshBtn.addEventListener("click", loadNews);
+    if (refreshBtn) refreshBtn.addEventListener("click", () => loadNews(true));
 
     const filterBtn = $("#filter-btn");
     const filterPanel = $("#filter-panel");
