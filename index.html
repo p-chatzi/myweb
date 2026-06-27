@@ -26,6 +26,7 @@
             <a href="#" data-target="projects">Projets</a>
             <a href="#" data-target="tech">Expertise</a>
             <a href="#" data-target="about">À Propos</a>
+            <a href="#" data-target="news">News</a>
             <a href="#" data-target="contact">Contact</a>
         </div>
         <div class="mobile-nav-controls" style="display: none; align-items: center; gap: 1.5rem;">
@@ -511,7 +512,102 @@
         </div>
     </section>
 
-    <!-- PAGE 5: Secure Contact Me -->
+    <!-- PAGE 5: News Section -->
+    <section id="news" class="view news-view">
+        <div class="container">
+
+            <!-- In-construction banner -->
+            <div class="news-construction">
+                <span class="badge" style="background: #f59e0b; color: #1a1206; font-weight: 700; font-size: 0.75rem; letter-spacing: 0.08em; padding: 0.35rem 0.7rem; border-radius: 6px; white-space: nowrap;">UNDER CONSTRUCTION</span>
+                <p>Live cyber-security feed — work in progress. The aggregator pulls public RSS feeds at load time; layout and source list may still change.</p>
+            </div>
+
+            <div class="section-header">
+                <h2><span class="gradient-text-blue">Cyber</span> <span class="gradient-text-green">News</span></h2>
+                <p>Aggregated security headlines from trusted feeds, newest first. All content links back to the original publisher.</p>
+            </div>
+
+            <!-- Toolbar -->
+            <div class="news-toolbar">
+                <button class="btn btn-primary btn-sm" id="refresh-btn">Refresh feed</button>
+                <button class="btn btn-secondary btn-sm" id="filter-btn">Filter & Settings</button>
+                <span class="news-status" id="news-status">Loading…</span>
+            </div>
+            
+            <!-- Filter Panel -->
+            <div id="filter-panel" class="panel" style="display: none; margin-bottom: 2.5rem; padding: 1.5rem;">
+                <h3 style="margin-bottom: 1rem; font-size: 1.1rem; color: var(--text-primary);">Active Sources</h3>
+                <div id="filter-checkboxes" style="display: flex; flex-direction: column; gap: 0.8rem; margin-bottom: 1.5rem; color: var(--text-secondary); font-size: 0.95rem;">
+                    <!-- Checkboxes injected by JS -->
+                </div>
+                
+                <h3 style="margin-bottom: 1rem; font-size: 1.1rem; color: var(--text-primary);">Display Settings</h3>
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                    <label for="cards-per-load" style="color: var(--text-secondary); font-size: 0.95rem;">Cards to show at a time:</label>
+                    <select id="cards-per-load" style="background: var(--bg-surface-hover); color: var(--text-primary); border: 1px solid var(--border-color); padding: 0.5rem 0.8rem; border-radius: 6px; font-family: inherit;">
+                        <option value="6">6</option>
+                        <option value="9">9</option>
+                        <option value="12">12</option>
+                        <option value="15">15</option>
+                        <option value="30">30 (All)</option>
+                    </select>
+                </div>
+                
+                <div style="display: flex; gap: 1rem;">
+                    <button class="btn btn-primary btn-sm" id="apply-filter-btn">Apply & Reload</button>
+                    <button class="btn btn-secondary btn-sm" id="cancel-filter-btn">Cancel</button>
+                </div>
+            </div>
+
+            <!-- News grid (populated by JS) -->
+            <div class="grid" id="news-grid" aria-live="polite"></div>
+            
+            <div style="text-align: center; margin-top: 3rem; display: none;" id="load-more-container">
+                <button class="btn btn-secondary" id="load-more-btn">Load More</button>
+            </div>
+
+            <!-- RSS sources -->
+            <div class="panel" id="rss-panel">
+                <h2><span class="eyebrow" style="display: block; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent-green); margin-bottom: 0.4rem;">Aggregated from</span>Sources · RSS feeds</h2>
+                <ul class="source-list" id="rss-sources"></ul>
+            </div>
+
+            <!-- Recommended sources for later -->
+            <div class="panel">
+                <h2><span class="eyebrow" style="display: block; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent-green); margin-bottom: 0.4rem;">Go further</span>Other sources worth following</h2>
+                <div class="rec-groups">
+
+                    <div class="rec-group">
+                        <h3>Twitter / X</h3>
+                        <ul>
+                            <li><a href="https://x.com/TheHackersNews" target="_blank" rel="noopener">@TheHackersNews</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="rec-group">
+                        <h3>CTF Platforms</h3>
+                        <ul>
+                            <li><a href="https://www.root-me.org" target="_blank" rel="noopener">Root-Me</a></li>
+                            <li><a href="https://ctf.hackthebox.com/events/live" target="_blank" rel="noopener">Hack The Box</a></li>
+                            <li><a href="https://tryhackme.com" target="_blank" rel="noopener">TryHackMe</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="rec-group">
+                        <h3>Blogs · newsletters · advisories</h3>
+                        <ul>
+                            <li><a href="https://tldrsec.com" target="_blank" rel="noopener">tl;dr sec</a></li>
+                            <li><a href="https://projectzero.google/" target="_blank" rel="noopener">Google Project Zero</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PAGE 6: Secure Contact Me -->
     <section id="contact" class="view">
         <div class="container">
             <div class="section-header">
@@ -610,6 +706,7 @@
                 <li><a href="https://wrought-severity-rectangle.ngrok-free.dev" target="_blank"
                         rel="noopener noreferrer">CTF <i class="fa-solid fa-flag" style="margin-left: 0.3rem;"></i></a>
                 </li>
+                <li><a href="#" data-target="news">News</a></li>
             </ul>
             <ul class="mobile-menu-small" style="margin-top: 1rem;">
                 <li><a href="#" data-target="about">A propos</a></li>
