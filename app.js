@@ -630,6 +630,9 @@ document.addEventListener('DOMContentLoaded', () => {
         try { localStorage.setItem(CACHE_KEY, JSON.stringify(feedsDataMap)); } catch(e){}
     }
 
+    let isFetchingNews = false;
+    let lastFetchTime = 0;
+
     async function loadNews() {
         if (!$("#news-grid")) return;
         const active = FEEDS.filter(f => f.active);
@@ -658,14 +661,26 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         } catch(e) {}
 
+        renderSourceList();
+
+        // 2. Anti-Spam Check for Network Requests
+        const now = Date.now();
+        if (isFetchingNews || now - lastFetchTime < 10000) {
+            if (hasCache) {
+                $("#news-status").innerHTML = "<strong>" + allNewsItems.length + "</strong> headlines (cached) · Wait a moment to refresh.";
+            }
+            return;
+        }
+
+        isFetchingNews = true;
+        lastFetchTime = now;
+
         if (!hasCache) {
             $("#news-status").textContent = "Loading…";
             renderSkeleton();
         } else {
             $("#news-status").textContent = "Updating feeds…";
         }
-        
-        renderSourceList();
 
         let okFeeds = 0;
         let errors = [];
@@ -674,6 +689,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const checkDone = () => {
             completedFeeds++;
             if (completedFeeds === active.length) {
+                isFetchingNews = false;
                 if (allNewsItems.length === 0) {
                     showErrorState(errors, active.length);
                 } else {
@@ -790,13 +806,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         applyFilterBtn.addEventListener("click", () => {
             const cbs = filterCheckboxes.querySelectorAll("input[type=checkbox]");
-            
-            let checkedCount = 0;
-            cbs.forEach(cb => { if (cb.checked) checkedCount++; });
-            if (checkedCount > 3) {
-                alert("To prevent payload errors (413), please select a maximum of 3 feeds at a time.");
-                return;
-            }
 
             const savedFeeds = {};
             cbs.forEach(cb => {
