@@ -268,29 +268,31 @@ document.addEventListener('DOMContentLoaded', () => {
             submissionData.count += 1;
             localStorage.setItem('contact_submissions', JSON.stringify(submissionData));
 
-            // D. Send submission via FormSubmit to receive direct emails
-            const payload = {
-                name: cleanName,
-                email: cleanEmail,
-                message: cleanMessage
-            };
+            // D. Send submission natively via Netlify Forms
+            const formData = new FormData(contactForm);
 
-            fetch('https://formsubmit.co/ajax/peter.chatzigianis@gmail.com', {
+            // Re-inject sanitized fields back into formData
+            formData.set('name', cleanName);
+            formData.set('email', cleanEmail);
+            formData.set('message', cleanMessage);
+
+            fetch('/', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
-                body: JSON.stringify(payload)
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams(formData).toString()
             })
-                .then(() => {
-                    console.log('Secure Payload Delivered to Backend');
-                    alert('Message transmis avec succès. Je vous répondrai dans les plus brefs délais.');
-                    contactForm.reset();
+                .then((response) => {
+                    if (response.ok) {
+                        console.log('Secure Payload Delivered to Netlify Edge');
+                        alert('Message transmis avec succès. Je vous répondrai dans les plus brefs délais.');
+                        contactForm.reset();
+                    } else {
+                        throw new Error('Network response was not ok');
+                    }
                 })
                 .catch((error) => {
                     console.error(error);
-                    alert('Erreur lors de la transmission. Veuillez réessayer.');
+                    alert('Erreur lors de la transmission. Veuillez vérifier le Captcha et réessayer.');
                 });
         });
     }
