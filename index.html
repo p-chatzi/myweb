@@ -16,17 +16,30 @@
 
     <!-- SPA Navigation -->
     <nav>
-        <a href="#" class="nav-brand">Peter Chatzigianis</a>
+        <a href="#" class="nav-brand" onclick="navigateTo('gateway')">Peter Chatzigianis</a>
         <div class="nav-links">
             <button id="theme-toggle" class="btn-icon" aria-label="Toggle Theme"
                 style="background: none; border: none; cursor: pointer; font-size: 1.2rem; color: var(--text-secondary); margin-right: 1rem; transition: color 0.3s ease;">
                 <i class="fa-solid fa-moon"></i>
             </button>
-            <a href="#" data-target="home">Gateway</a>
-            <a href="#" data-target="projects">Projets</a>
-            <a href="#" data-target="tech">Expertise</a>
-            <a href="#" data-target="about">À Propos</a>
-            <a href="#" data-target="news">News</a>
+            <a href="#" data-target="gateway">Gateway (home)</a>
+            <div class="nav-dropdown">
+                <a href="#" onclick="return false;">About Me <i class="fa-solid fa-chevron-down" style="font-size: 0.8em; margin-left: 0.3rem;"></i></a>
+                <div class="nav-dropdown-content">
+                    <a href="#" data-target="projects">Projets</a>
+                    <a href="#" data-target="tech">Expertise</a>
+                    <a href="#" data-target="about">À Propos</a>
+                </div>
+            </div>
+            <div class="nav-dropdown">
+                <a href="#" onclick="return false;">Technical <i class="fa-solid fa-chevron-down" style="font-size: 0.8em; margin-left: 0.3rem;"></i></a>
+                <div class="nav-dropdown-content">
+                    <a href="#" data-target="news">News</a>
+                    <a href="#" data-target="events">Events</a>
+                    <a href="#" data-target="certifs">Certifs</a>
+                </div>
+            </div>
+            <a href="https://wrought-severity-rectangle.ngrok-free.dev" target="_blank" rel="noopener noreferrer">My CTF</a>
             <a href="#" data-target="contact">Contact</a>
         </div>
         <div class="mobile-nav-controls" style="display: none; align-items: center; gap: 1.5rem;">
@@ -34,53 +47,27 @@
                 style="font-size: 2.5rem; color: var(--text-primary); background: none; border: none; cursor: pointer;">
                 <i class="fa-solid fa-bars"></i>
             </button>
-            <button class="mobile-nav-brand-pc" onclick="navigateTo('home')"
+            <button class="mobile-nav-brand-pc" onclick="navigateTo('gateway')"
                 style="font-family: 'Space Grotesk', sans-serif; font-size: 1.8rem; font-weight: 700; color: var(--text-primary); cursor: pointer; border: 2px solid var(--text-primary); border-radius: 8px; padding: 0.2rem 0.8rem; display: inline-block; background: transparent; transition: opacity 0.3s ease;">P.C.</button>
         </div>
     </nav>
 
-    <!-- PAGE 1: Landing Gateway (The Hero Page) -->
-    <section id="home" class="view active">
+    <!-- PAGE 0: Landing Gateway -->
+    <section id="gateway" class="view active" data-flow="gateway">
         <div class="container"
-            style="display: flex; flex-direction: column; justify-content: center; min-height: 75vh;">
-            <div style="max-width: 900px;">
-                <h1 style="margin-bottom: 2rem;">
-                    <span class="gradient-text-blue">Gardien Numérique</span><br>
-                    des Infrastructures et réseaux IT
-                </h1>
-                <p style="font-size: 1.4rem; max-width: 800px; margin-bottom: 3rem; line-height: 1.8;">
-                    Étudiant en Bachelor Cybersécurité à l'ISEN Méditerranée, dédié à la protection d'infrastructures,
-                    au durcissement système et à la résilience des infrastructures critiques.
-                </p>
-
-                <div class="btn-group">
-                    <button class="btn btn-primary" data-route="projects">
-                        Découvrir mes Projets
-                    </button>
-                    <button class="btn btn-secondary" data-route="tech">
-                        Explorer mon Expertise
-                    </button>
-                </div>
-
-                <div class="stats-grid" style="display: flex; gap: 1rem; margin-top: 2rem;">
-                    <a href="https://wrought-severity-rectangle.ngrok-free.dev" target="_blank"
-                        rel="noopener noreferrer" class="btn btn-primary-green"
-                        style="padding: 0.8rem 1.5rem; font-size: 0.95rem;">
-                        <i class="fa-solid fa-server" style="margin-right: 0.5rem;"></i> Mon CTF
-                    </a>
-                    <a href="https://www.root-me.org/4tune?lang=fr#c8295e09c8fffd0eb6063150be326851" target="_blank"
-                        rel="noopener noreferrer" class="btn btn-secondary"
-                        style="padding: 0.8rem 1.5rem; font-size: 0.95rem;">
-                        <i class="fa-solid fa-shield-halved"
-                            style="margin-right: 0.5rem; color: var(--accent-blue);"></i> Root-Me: 255 pts
-                    </a>
-                </div>
+            style="display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 80vh; text-align: center;">
+            <h1 class="gradient-text-blue" style="font-size: 4rem; margin-bottom: 2.5rem;">Welcome</h1>
+            <div style="display: flex; flex-direction: column; gap: 1.5rem; width: 100%; max-width: 300px;">
+                <button class="btn btn-primary" data-route="projects">About Me</button>
+                <button class="btn btn-primary" data-route="news">Technical</button>
+                <a href="https://wrought-severity-rectangle.ngrok-free.dev" target="_blank" rel="noopener noreferrer" class="btn btn-primary-green" style="display: flex; justify-content: center; align-items: center; text-decoration: none;">My CTF</a>
             </div>
         </div>
     </section>
 
+
     <!-- PAGE 2: Technical Stack & Expertise -->
-    <section id="tech" class="view">
+    <section id="tech" class="view" data-flow="about">
         <div class="container">
             <div class="section-header">
                 <h2 class="gradient-text-green">Compétences Technique</h2>
@@ -227,8 +214,8 @@
         </div>
     </section>
 
-    <!-- PAGE 3: Detailed Project Section -->
-    <section id="projects" class="view">
+    <!-- PAGE 3: Projects Portfolio -->
+    <section id="projects" class="view" data-flow="about">
         <div class="container">
             <div class="section-header">
                 <h2 class="gradient-text-blue">Projets Techniques</h2>
@@ -424,8 +411,8 @@
         </div>
     </section>
 
-    <!-- PAGE 4: About Me (Soft Skills & Background) -->
-    <section id="about" class="view">
+    <!-- PAGE 4: About Me & Background -->
+    <section id="about" class="view" data-flow="about">
         <div class="container">
             <div class="section-header">
                 <h2 class="gradient-text-green">Profil & Objectifs</h2>
@@ -434,6 +421,10 @@
             <div style="max-width: 900px; margin-bottom: 4rem;">
                 <h3 style="color: var(--text-primary); margin-bottom: 1rem;"><i class="fa-solid fa-user-shield"
                         style="margin-right: 0.8rem; color: var(--accent-green);"></i> Qui suis-je ?</h3>
+                <p style="font-size: 1.4rem; max-width: 800px; margin-bottom: 3rem; line-height: 1.8;">
+                    <strong style="color: var(--text-primary); font-size: 1.8rem; display: block; margin-bottom: 0.5rem;">Gardien Numérique<br>des Infrastructures et réseaux IT</strong>
+                    Étudiant en Bachelor Cybersécurité à l'ISEN Méditerranée, dédié à la protection d'infrastructures, au durcissement système et à la résilience des infrastructures critiques.
+                </p>
                 <p style="font-size: 1.15rem; line-height: 1.8;">
                     Curieux de nature, rigoureux et constamment à la recherche de nouveaux défis techniques (CTFs,
                     veille active). Actuellement en cours de validation de mes heures pour le <strong>Permis B</strong>.
@@ -512,8 +503,8 @@
         </div>
     </section>
 
-    <!-- PAGE 5: News Section -->
-    <section id="news" class="view news-view">
+    <!-- PAGE 5: Cyber News (Technical Flow Start) -->
+    <section id="news" class="view news-view" data-flow="technical">
         <div class="container">
 
             <!-- In-construction banner -->
@@ -607,8 +598,68 @@
         </div>
     </section>
 
-    <!-- PAGE 6: Secure Contact Me -->
-    <section id="contact" class="view">
+    <!-- PAGE 6: Events -->
+    <section id="events" class="view" data-flow="technical">
+        <div class="container">
+            <div class="news-construction" style="margin-bottom: 3rem;">
+                <span class="badge" style="background: #f59e0b; color: #1a1206; font-weight: 700; font-size: 0.75rem; letter-spacing: 0.08em; padding: 0.35rem 0.7rem; border-radius: 6px; white-space: nowrap;">UNDER CONSTRUCTION</span>
+                <p>Events section — work in progress.</p>
+            </div>
+            <div class="section-header">
+                <h2><span class="gradient-text-blue">Cyber</span> <span class="gradient-text-green">Events</span></h2>
+                <p>In-person events and online CTFs.</p>
+            </div>
+            
+            <div class="rec-groups">
+                <div class="rec-group">
+                    <h3>In person in France</h3>
+                    <ul>
+                        <li><a href="https://lehack.org/" target="_blank" rel="noopener">leHack</a> - One of the largest French hacker conventions.</li>
+                        <li><a href="https://barbhack.fr/" target="_blank" rel="noopener">Barbhack</a> - Cybersecurity conference in Toulon.</li>
+                    </ul>
+                </div>
+                <div class="rec-group">
+                    <h3>Online CTFs</h3>
+                    <ul>
+                        <li><a href="https://www.root-me.org" target="_blank" rel="noopener">Root-Me</a> - Continuous online CTF training.</li>
+                        <li><a href="https://tryhackme.com/challenges" target="_blank" rel="noopener">TryHackMe</a> - Cyber security training and challenges.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PAGE 7: Certifs -->
+    <section id="certifs" class="view" data-flow="technical">
+        <div class="container">
+            <div class="news-construction" style="margin-bottom: 3rem;">
+                <span class="badge" style="background: #f59e0b; color: #1a1206; font-weight: 700; font-size: 0.75rem; letter-spacing: 0.08em; padding: 0.35rem 0.7rem; border-radius: 6px; white-space: nowrap;">UNDER CONSTRUCTION</span>
+                <p>Certifications section — work in progress.</p>
+            </div>
+            <div class="section-header">
+                <h2><span class="gradient-text-blue">Cyber</span> <span class="gradient-text-green">Certifications</span></h2>
+                <p>Interesting certifications.</p>
+            </div>
+            
+            <div class="rec-groups">
+                <div class="rec-group">
+                    <h3>Offensive Security</h3>
+                    <ul>
+                        <li><a href="https://www.offsec.com/courses/pen-200/" target="_blank" rel="noopener">OSCP</a> - Offensive Security Certified Professional.</li>
+                    </ul>
+                </div>
+                <div class="rec-group">
+                    <h3>Hack The Box</h3>
+                    <ul>
+                        <li><a href="https://academy.hackthebox.com/preview/certifications/htb-certified-penetration-testing-specialist" target="_blank" rel="noopener">CPTS</a> - HTB Certified Penetration Testing Specialist.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PAGE 8: Secure Contact Me -->
+    <section id="contact" class="view" data-flow="both">
         <div class="container">
             <div class="section-header">
                 <h2 class="gradient-text-blue">Protocole de Communication</h2>
@@ -695,21 +746,30 @@
     <div id="mobile-menu-overlay">
         <div class="mobile-menu-header">
             <button id="mobile-menu-close"><i class="fa-solid fa-xmark"></i></button>
-            <span class="mobile-menu-brand" onclick="navigateTo('home')"
+            <span class="mobile-menu-brand" onclick="navigateTo('gateway')"
                 style="cursor: pointer; border: 2px solid #e0f2fe; border-radius: 8px; padding: 0.2rem 0.8rem;">P.C.</span>
         </div>
         <div class="mobile-menu-content">
             <ul class="mobile-menu-big">
-                <li><a href="#" data-target="home" class="active">Gateway</a></li>
-                <li><a href="#" data-target="projects">Projets</a></li>
-                <li><a href="#" data-target="tech">Expertise</a></li>
-                <li><a href="https://wrought-severity-rectangle.ngrok-free.dev" target="_blank"
-                        rel="noopener noreferrer">CTF <i class="fa-solid fa-flag" style="margin-left: 0.3rem;"></i></a>
+                <li style="margin-top: 1rem;"><a href="#" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'none' ? 'flex' : 'none'; return false;">About Me</a>
+                    <ul style="list-style: none; padding-left: 1rem; font-size: 1.2rem; margin-top: 0.5rem; display: none; flex-direction: column; gap: 0.5rem;">
+                        <li><a href="#" data-target="projects" style="opacity: 0.8;">Projets</a></li>
+                        <li><a href="#" data-target="tech" style="opacity: 0.8;">Expertise</a></li>
+                        <li><a href="#" data-target="about" style="opacity: 0.8;">À Propos</a></li>
+                    </ul>
                 </li>
-                <li><a href="#" data-target="news">News</a></li>
+                <li style="margin-top: 1rem;"><a href="#" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'none' ? 'flex' : 'none'; return false;">Technical</a>
+                    <ul style="list-style: none; padding-left: 1rem; font-size: 1.2rem; margin-top: 0.5rem; display: none; flex-direction: column; gap: 0.5rem;">
+                        <li><a href="#" data-target="news" style="opacity: 0.8;">News</a></li>
+                        <li><a href="#" data-target="events" style="opacity: 0.8;">Events</a></li>
+                        <li><a href="#" data-target="certifs" style="opacity: 0.8;">Certifs</a></li>
+                    </ul>
+                </li>
+                <li style="margin-top: 1rem;"><a href="https://wrought-severity-rectangle.ngrok-free.dev" target="_blank"
+                        rel="noopener noreferrer">My CTF <i class="fa-solid fa-flag" style="margin-left: 0.3rem;"></i></a>
+                </li>
             </ul>
             <ul class="mobile-menu-small" style="margin-top: 1rem;">
-                <li><a href="#" data-target="about">A propos</a></li>
                 <li><a href="#" data-target="contact">Contact</a></li>
             </ul>
             <div class="mobile-menu-socials">

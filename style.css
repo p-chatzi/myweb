@@ -124,6 +124,31 @@ nav {
     color: var(--text-primary);
 }
 
+.nav-dropdown { position: relative; display: inline-block; }
+.nav-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--bg-surface);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+    z-index: 100;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    top: 100%;
+    left: 0;
+    padding: 0.5rem 0;
+}
+.nav-dropdown:hover .nav-dropdown-content {
+    display: block;
+}
+.nav-dropdown-content a {
+    padding: 12px 16px !important;
+    display: block;
+}
+.nav-dropdown-content a:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
 /* SPA View Logic */
 .view {
     display: none;
@@ -137,12 +162,12 @@ nav {
     display: block;
 }
 
-#home {
+#home, #gateway {
     position: relative;
     overflow: hidden;
 }
 
-#home::before {
+#home::before, #gateway::before {
     content: '';
     position: absolute;
     top: 0;
@@ -420,21 +445,25 @@ nav {
         flex-direction: column;
         background-color: #372B3D;
     }
+    #gateway { order: 0; background-color: #372B3D !important; }
     #home { order: 1; background-color: #372B3D !important; }
     #projects { order: 2; background-color: #473346 !important; }
     #tech { order: 3; background-color: #57384D !important; }
     #about { order: 4; background-color: #473346 !important; }
-    #news { order: 5; background-color: #57384D !important; }
-    #contact { order: 6; background-color: #372B3D !important; }
+    
+    #news { order: 1; background-color: #57384D !important; }
+    #events { order: 2; background-color: #473346 !important; }
+    #certifs { order: 3; background-color: #57384D !important; }
+    
+    #contact { order: 99; background-color: #372B3D !important; }
     
     .view {
-        display: block !important;
         opacity: 1 !important;
         min-height: auto;
         padding: 5rem 5% !important;
         background: transparent !important;
     }
-    #home::before {
+    #home::before, #gateway::before {
         display: none;
     }
     
@@ -471,7 +500,7 @@ nav {
         display: block !important;
     }
 
-    #home {
+    #home, #gateway {
         text-align: center;
         min-height: 100vh;
         display: flex !important;
@@ -479,13 +508,13 @@ nav {
         justify-content: flex-start;
         padding-top: 8rem !important;
     }
-    #home h1 {
+    #home h1, #gateway h1 {
         font-family: 'Space Grotesk', sans-serif;
         font-size: 3rem;
         letter-spacing: 0.05em;
         line-height: 1.2;
     }
-    #home h1 .gradient-text-blue {
+    #home h1 .gradient-text-blue, #gateway h1 .gradient-text-blue {
         background: none;
         -webkit-text-fill-color: initial;
         color: #5d6e82;

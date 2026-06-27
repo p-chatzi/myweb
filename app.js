@@ -65,25 +65,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function navigateTo(viewId) {
         window.closeCaseStudy(true); // Close any open case study instantly
-        if (isMobile()) {
-            const targetView = document.getElementById(viewId);
-            if (targetView) {
-                targetView.scrollIntoView({ behavior: 'smooth' });
-            }
-            const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
-            if (mobileMenuOverlay) mobileMenuOverlay.classList.remove('active');
-            return;
-        }
+        
+        const targetView = document.getElementById(viewId);
+        if (!targetView) return;
+        
+        const flow = targetView.getAttribute('data-flow');
 
-        // Hide all views
+        // Hide all views first
         views.forEach(view => {
             view.classList.remove('active');
         });
 
-        // Show target view
-        const targetView = document.getElementById(viewId);
-        if (targetView) {
+        if (isMobile() && flow && flow !== 'gateway') {
+            // Mobile flow: show all sections belonging to the flow, plus contact
+            document.querySelectorAll(`.view[data-flow="${flow}"]`).forEach(view => {
+                view.classList.add('active');
+            });
+            const contact = document.getElementById('contact');
+            if (contact) contact.classList.add('active');
+
+            setTimeout(() => {
+                targetView.scrollIntoView({ behavior: 'smooth' });
+            }, 50);
+
+            const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+            if (mobileMenuOverlay) mobileMenuOverlay.classList.remove('active');
+        } else {
+            // Desktop or Gateway: show only the specific view
             targetView.classList.add('active');
+            window.scrollTo(0, 0);
         }
 
         // Update active nav link
@@ -94,24 +104,31 @@ document.addEventListener('DOMContentLoaded', () => {
                 link.classList.remove('active');
             }
         });
-
-        // Scroll to top on navigate
-        window.scrollTo(0, 0);
+        
+        // Update active state in mobile submenu
+        document.querySelectorAll('.mobile-menu-content a').forEach(link => {
+             if (link.getAttribute('data-target') === viewId) {
+                 link.classList.add('active');
+             } else {
+                 link.classList.remove('active');
+             }
+        });
     }
 
     // Attach click listeners to nav links
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
-            e.preventDefault();
             const target = link.getAttribute('data-target');
+            if (!target) return; // Allow normal navigation for links without data-target
+            e.preventDefault();
             navigateTo(target);
             // Update URL hash for simple state (optional, but good for linking)
             window.location.hash = target;
         });
     });
 
-    // Handle initial load based on hash or default to 'home'
-    const initialView = window.location.hash.replace('#', '') || 'home';
+    // Handle initial load based on hash or default to 'gateway'
+    const initialView = window.location.hash.replace('#', '') || 'gateway';
     if (isMobile()) {
         window.scrollTo(0, 0);
     } else {
